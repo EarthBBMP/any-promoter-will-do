@@ -1,0 +1,29 @@
+Test set n=816   collapsed 3/6 runs
+R² across survivors: 0.3518 ± 0.0184   (released weights: 0.3296)
+
+=== 1. Against gradient boosting on the 8 half-life features ===
+
+  released weights               vs GBM 8 features           ΔR² = +0.0128  [-0.0167, +0.0454]  p=0.385  not significant
+  retrained seed1_sgd            vs GBM 8 features           ΔR² = +0.0409  [+0.0077, +0.0770]  p=0.020  SIGNIFICANT
+  retrained seed2_sgd            vs GBM 8 features           ΔR² = +0.0143  [-0.0183, +0.0476]  p=0.421  not significant
+  retrained seed1_adam           vs GBM 8 features           ΔR² = +0.0495  [+0.0131, +0.0874]  p=0.010  SIGNIFICANT
+  mean of survivors              vs GBM 8 features           ΔR² = +0.0521  [+0.0207, +0.0849]  p=0.003  SIGNIFICANT
+
+=== 2. Does the model use gene-specific promoter information? ===
+
+  model                          real   shuffled    zeroed
+  released weights              0.330      0.322    -0.076
+  retrained seed1_sgd           0.358      0.344    -0.071
+  retrained seed2_sgd           0.331      0.328    -0.286
+  retrained seed1_adam          0.366      0.364     0.338
+
+  Real vs shuffled promoters (identity destroyed, distribution kept):
+  released weights               vs same model, shuffled     ΔR² = +0.0079  [-0.0071, +0.0244]  p=0.326  not significant
+  retrained seed1_sgd            vs same model, shuffled     ΔR² = +0.0134  [+0.0020, +0.0250]  p=0.020  SIGNIFICANT
+  retrained seed2_sgd            vs same model, shuffled     ΔR² = +0.0027  [-0.0128, +0.0185]  p=0.741  not significant
+  retrained seed1_adam           vs same model, shuffled     ΔR² = +0.0026  [-0.0031, +0.0082]  p=0.378  not significant
+
+  Decomposition on the best model (retrained seed1_adam):
+  full promoter                  vs GBM 8 features           ΔR² = +0.0495  [+0.0131, +0.0874]  p=0.010  SIGNIFICANT
+  promoter zeroed                vs GBM 8 features           ΔR² = +0.0207  [-0.0133, +0.0559]  p=0.230  not significant
+  full promoter                  vs promoter zeroed          ΔR² = +0.0287  [+0.0034, +0.0515]  p=0.031  SIGNIFICANT

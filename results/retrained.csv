@@ -1,0 +1,2 @@
+r2,rmse,pearson_r,pearson_r2,spearman_r,seed,optimizer,lr,collapsed,pred_std,epochs_run,minutes
+-9.135635332491177e-05,0.4776888835475281,,,,0,sgd,,True,0.0,2,3.150892706712087

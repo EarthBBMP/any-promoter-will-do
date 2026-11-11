@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+results/*.npy
+aspine_colab.zip
+_check*.png
+_chk*.png

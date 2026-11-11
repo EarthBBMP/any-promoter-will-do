@@ -1,0 +1,8 @@
+# Evaluation-only dependencies. TensorFlow is needed solely to run a forward
+# pass through the released ASPINE weights; no retraining is performed.
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.5.1
+tensorflow==2.17.0
+pytest==8.3.2
