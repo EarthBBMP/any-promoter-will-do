@@ -16,10 +16,12 @@ Bangkok-NMH (iGEM 2024) under CC BY 4.0:
 <https://2024.igem.wiki/bangkok-nmh/description>. They are not redistributed
 here and are read unmodified.
 
-The release was published on the iGEM GitLab at
-<https://gitlab.igem.org/2024/software-tools/bangkok-nmh> (the page currently
-requires a sign-in). `aspine_bench/config.py` looks for it one directory above
-this repository, so clone this repository *inside* your copy of the release:
+The team's project page is <https://2024.igem.wiki/bangkok-nmh/>. Their code
+and data release was published on the iGEM GitLab at
+<https://gitlab.igem.org/2024/software-tools/bangkok-nmh>, which currently
+requires a sign-in. `aspine_bench/config.py` looks for the release one
+directory above this repository, so clone this repository *inside* your copy
+of the release:
 
 ```
 cd bangkok-nmh
