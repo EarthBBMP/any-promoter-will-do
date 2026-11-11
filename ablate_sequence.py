@@ -25,7 +25,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-from aspine_bench import cnn, config, data, metrics
+from bench import cnn, config, data, metrics
 
 
 def main() -> None:

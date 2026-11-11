@@ -21,7 +21,7 @@ from typing import Dict
 import numpy as np
 import pandas as pd
 
-from aspine_bench import baselines, config, data, metrics
+from bench import baselines, config, data, metrics
 
 PRED_DIR = config.RESULTS_DIR
 DISPLAY_NAMES = {
@@ -79,7 +79,7 @@ def stage_tabular() -> None:
 
 
 def stage_cnn() -> None:
-    from aspine_bench import cnn
+    from bench import cnn
 
     print("[cnn] loading released weights")
     model = cnn.load_released_model()

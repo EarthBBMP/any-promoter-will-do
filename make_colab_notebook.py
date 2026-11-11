@@ -71,7 +71,7 @@ CELLS = [
     md(
         "## 2. Mount Drive and unpack",
         "",
-        "The archive mirrors the local repository layout, so `aspine_bench.config` resolves",
+        "The archive mirrors the local repository layout, so `bench.config` resolves",
         "its paths on Colab exactly as it does locally -- nothing needs patching.",
     ),
     code(

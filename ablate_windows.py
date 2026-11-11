@@ -28,7 +28,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from aspine_bench import config, data, metrics
+from bench import config, data, metrics
 
 WINDOWS = {
     "promoter": (3500, 13500),
@@ -42,7 +42,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--sweep-dir", default="aspine_results")
+    parser.add_argument("--sweep-dir", default="sweep")
     args = parser.parse_args()
     sweep = Path(args.sweep_dir)
 

@@ -39,7 +39,7 @@ import pandas as pd
 from keras.callbacks import Callback
 from keras.utils import PyDataset
 
-from aspine_bench import config, data, metrics
+from bench import config, data, metrics
 
 
 class EncodedSequence(PyDataset):

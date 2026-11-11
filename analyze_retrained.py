@@ -16,7 +16,7 @@ Expects the sweep artifacts (produced by train_cnn.py, optionally on Colab) in
 --sweep-dir, and the baseline predictions from run_benchmark.py in results/.
 
     python analyze_retrained.py
-    python analyze_retrained.py --sweep-dir aspine_results
+    python analyze_retrained.py --sweep-dir path/to/sweep
 """
 
 import argparse
@@ -27,7 +27,7 @@ from typing import Dict, List, Tuple
 import numpy as np
 import pandas as pd
 
-from aspine_bench import config, data, metrics
+from bench import config, data, metrics
 
 
 def verdict(delta: Dict[str, float]) -> str:
@@ -50,7 +50,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--sweep-dir", default="aspine_results")
+    parser.add_argument("--sweep-dir", default="sweep")
     args = parser.parse_args()
 
     sweep = Path(args.sweep_dir)

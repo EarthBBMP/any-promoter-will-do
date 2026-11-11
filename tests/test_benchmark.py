@@ -9,7 +9,7 @@ a failure, which is the point of the test.
 import numpy as np
 import pytest
 
-from aspine_bench import data, metrics
+from bench import data, metrics
 
 
 def test_one_hot_matches_original_semantics():

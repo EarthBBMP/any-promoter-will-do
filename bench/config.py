@@ -15,7 +15,7 @@ unchanged on Colab, where the repository layout does not exist:
 import os
 from pathlib import Path
 
-# aspine-newinml/aspine_bench/config.py -> aspine-newinml -> repository root
+# bench/config.py -> this repo -> parent folder (the original release)
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 DATA_DIR = Path(os.environ.get("ASPINE_DATA_DIR", REPO_ROOT / "data" / "Aspine"))

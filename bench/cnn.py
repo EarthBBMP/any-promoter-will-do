@@ -15,7 +15,7 @@ import numpy.typing as npt
 # Keep TensorFlow quiet; it logs device banners to stderr on import.
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 
-from aspine_bench import config, data
+from bench import config, data
 
 
 def load_released_model():

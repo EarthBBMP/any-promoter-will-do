@@ -19,7 +19,7 @@ here and are read unmodified.
 The team's project page is <https://2024.igem.wiki/bangkok-nmh/>. Their code
 and data release was published on the iGEM GitLab at
 <https://gitlab.igem.org/2024/software-tools/bangkok-nmh>, which currently
-requires a sign-in. `aspine_bench/config.py` looks for the release one
+requires a sign-in. `bench/config.py` looks for the release one
 directory above this repository, so clone this repository *inside* your copy
 of the release:
 
@@ -95,9 +95,10 @@ of the runs that collapses; pass the seeds and optimisers as above for the full
 sweep. It can also be run on a hosted GPU with `colab_train.ipynb`.
 
 `analyze_retrained.py`, `ablate_shuffles.py`, `ablate_windows.py` and
-`make_figures.py` read the sweep from `--sweep-dir`, which defaults to
-`aspine_results/`, the checkpoints and predictions from our own run. To use
-models you retrained locally, pass `--sweep-dir results`.
+`make_figures.py` read the retraining sweep from `--sweep-dir`, which defaults
+to `sweep/`, the checkpoints and predictions from our own run. `train_cnn.py`
+writes to `results/`, so to use models you retrained locally, pass
+`--sweep-dir results`.
 
 Every stage caches its predictions to `results/preds_*.npy`. These are not
 committed, so on a fresh clone run the four `run_benchmark.py` stages before
@@ -107,7 +108,7 @@ recomputation.
 ## Layout
 
 ```
-aspine_bench/
+bench/
   config.py             paths, seed, bootstrap settings
   data.py               memory-efficient loading, one-hot encoding, k-mer features
   metrics.py            R², RMSE, correlations, bootstrap and paired-bootstrap CIs
@@ -125,13 +126,13 @@ make_colab_notebook.py  builds the notebook
 prepare_colab_upload.py packages inputs for the notebook
 make_figures.py         paper figures
 results/                benchmark and intervention tables
-aspine_results/         retraining sweep: checkpoints, predictions, training histories
+sweep/                  retraining sweep: checkpoints, predictions, training histories
 tests/                  unit tests for encoders and metrics
 ```
 
 ## Notes on the reimplemented encoder
 
-`aspine_bench.data.one_hot` differs from the original `utils.encode_sequence`
+`bench.data.one_hot` differs from the original `utils.encode_sequence`
 in three ways, all deliberate:
 
 - It slices to the model's input window *before* encoding rather than after.

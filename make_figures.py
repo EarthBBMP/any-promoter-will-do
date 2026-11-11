@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.patches import Patch
 
-from aspine_bench import config, data, metrics
+from bench import config, data, metrics
 
 # Validated categorical slots (light surface). Order is fixed, never cycled.
 BLUE, ORANGE, AQUA = "#2a78d6", "#eb6834", "#1baf7a"
@@ -183,7 +183,7 @@ def figure_ablation(table: pd.DataFrame, out: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--sweep-dir", default="aspine_results")
+    parser.add_argument("--sweep-dir", default="sweep")
     parser.add_argument(
         "--out-dir",
         default=str(config.REPO_ROOT / "Formatting_Instructions_For_NeurIPS_2026 (3)"),

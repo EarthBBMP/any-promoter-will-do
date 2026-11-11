@@ -7,7 +7,7 @@ Produces ``aspine_colab.zip`` mirroring the local repository layout:
     data/Saved_Weights/       the released weights
     aspine-newinml/           this package (code only, no cached predictions)
 
-Because the layout matches, ``aspine_bench.config`` resolves its paths on Colab
+Because the layout matches, ``bench.config`` resolves its paths on Colab
 exactly as it does locally and nothing needs patching.
 
 The CSVs are ~296 MB of text and deflate about 3.5x, so the archive lands near
@@ -19,19 +19,19 @@ The CSVs are ~296 MB of text and deflate about 3.5x, so the archive lands near
 import zipfile
 from pathlib import Path
 
-from aspine_bench import config
+from bench import config
 
 HERE = Path(__file__).resolve().parent
 OUTPUT = HERE / "aspine_colab.zip"
 
 # (source path, path inside the archive)
 CODE_FILES = [
-    "aspine_bench/__init__.py",
-    "aspine_bench/config.py",
-    "aspine_bench/data.py",
-    "aspine_bench/metrics.py",
-    "aspine_bench/baselines.py",
-    "aspine_bench/cnn.py",
+    "bench/__init__.py",
+    "bench/config.py",
+    "bench/data.py",
+    "bench/metrics.py",
+    "bench/baselines.py",
+    "bench/cnn.py",
     "run_benchmark.py",
     "train_cnn.py",
     "ablate_sequence.py",

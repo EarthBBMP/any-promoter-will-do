@@ -34,7 +34,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from aspine_bench import config, data, metrics, shuffles
+from bench import config, data, metrics, shuffles
 
 
 def load_models(sweep: Path):
@@ -56,7 +56,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--sweep-dir", default="aspine_results")
+    parser.add_argument("--sweep-dir", default="sweep")
     args = parser.parse_args()
 
     rng = np.random.default_rng(config.SEED)
